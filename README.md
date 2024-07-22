@@ -1,8 +1,6 @@
 # HR-Solution-Weather-Observation-Station-2
 Solutions for MySQL and SQL Server
 
-Took me a little bit to figure out a SQL Server solution, so I'm sharing.
-
 ## PROBLEM
 Query the following two values from the STATION table:
 
@@ -18,6 +16,11 @@ FROM STATION;
 OR
 
 SELECT CAST(ROUND(SUM(LAT_N),2) AS NUMERIC(36,2)), CAST(ROUND(SUM(LONG_W), 2) AS NUMERIC(36, 2))
+FROM STATION;
+
+OR
+
+SELECT CONVERT(DECIMAL(16,2), SUM(LAT_N)), CONVERT(DECIMAL(16, 2), SUM(LONG_W))
 FROM STATION;
 
 ## MySQL:
